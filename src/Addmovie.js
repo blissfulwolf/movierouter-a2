@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
 
 function Addmovie() {
+   
+    const dispatch = useDispatch()
     const [moviename, setMoviename] = useState("");
 
     function addshow(){
-        alert(moviename)
+        
+        dispatch({type: 'ADD_ITEM', payload: moviename})   
+        console.log(moviename);
         setMoviename('')
     }
 
@@ -19,10 +23,6 @@ function Addmovie() {
                         placeholder="Add a movie name" style={{display: 'inline'}} className='form-control w-75 m-2' />
                     <button onClick={addshow} className='btn btn-success'> Add Movie </button>
                     </div>
-
-                <div classNamw='col-md-3'>
-
-                </div>
             </div>
 
         </div>

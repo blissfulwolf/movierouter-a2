@@ -5,6 +5,8 @@ import Addmovie from "./Addmovie";
 import movieReducer from "./movieReducer";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import Movielist from './Movielist'
+
 
 function App() {
   const store = createStore(movieReducer);
@@ -14,6 +16,7 @@ function App() {
       <Provider store={store}>
         <Navbar />
         <Addmovie />
+        <Movielist />
       </Provider>
     </div>
   );
