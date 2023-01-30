@@ -21,6 +21,13 @@ function movieReducer(state = initialMovie, action) {
               return movie
         })
       };
+
+      // Delete movie
+      case "DELETE_MOVIE":
+        return {
+          ...state,
+          moviecount: state.moviecount.filter((task)=>task!=action.payload)
+        }
   }
 
   return state;

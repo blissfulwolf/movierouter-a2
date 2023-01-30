@@ -18,8 +18,13 @@ function Movie({ movie }) {
         // remove the text box after clicking the submit button    
         setshow('none')   
         setnewmovie('')
-
     }    
+
+    // delete the item and reduce the movie count
+    function deletemovie(movie){
+        dispatch({type: 'DELETE_MOVIE', payload: movie})
+     }
+     
 
     return (
         <div>
@@ -30,7 +35,7 @@ function Movie({ movie }) {
                 </div>
                 <div className="col-md-2">
                     <button className='btn btn-primary m-2' onClick={editmovie}>Edit</button>
-                    <button className='btn btn-danger m-2'>Delete</button>
+                    <button className='btn btn-danger m-2'onClick={() => deletemovie(movie)}>Delete</button>
                 </div>
             </div>
             <div className="col-md-9 text-center">
